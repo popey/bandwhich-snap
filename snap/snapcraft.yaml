@@ -1,0 +1,30 @@
+name: bandwhich
+base: core18
+adopt-info: bandwhich
+summary: Terminal bandwidth utilization tool
+description: 
+  This is a CLI utility for displaying current network utilization by process,
+  connection and remote IP/hostname
+
+grade: stable
+confinement: strict
+parts:
+  bandwhich:
+    plugin: rust
+    rust-revision: "1.70.0"
+    source: https://github.com/imsnif/bandwhich.git
+    #source-tag: 0.20.0
+    build-packages:
+    - build-essential
+    - cargo
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version $(git describe --tags --abbrev=0)
+apps:
+  bandwhich:
+    command: bandwhich
+    plugs:
+    - network
+    - network-bind
+    - network-control
+    - network-status
