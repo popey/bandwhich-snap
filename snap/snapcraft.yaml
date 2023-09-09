@@ -19,10 +19,10 @@ parts:
     - cargo
     override-pull: |
       snapcraftctl pull
-      snapcraftctl set-version $(git describe --tags --abbrev=0)
+      snapcraftctl set-version $(git describe --tags --abbrev=0).$(git rev-parse --short HEAD)
 apps:
   bandwhich:
-    command: bandwhich
+    command: bin/bandwhich
     plugs:
     - network
     - network-bind
