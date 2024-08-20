@@ -1,6 +1,6 @@
 name: bandwhich
 base: core22
-version: "v1.11.0"
+version: "v0.23.0"
 summary: Terminal bandwidth utilization tool
 description: 
   This is a CLI utility for displaying current network utilization by process,
