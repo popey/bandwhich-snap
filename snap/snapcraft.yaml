@@ -1,6 +1,6 @@
 name: bandwhich
 base: core22
-adopt-info: bandwhich
+version: "v0.22.2"
 summary: Terminal bandwidth utilization tool
 description: 
   This is a CLI utility for displaying current network utilization by process,
@@ -12,10 +12,8 @@ parts:
   bandwhich:
     plugin: rust
     source: https://github.com/imsnif/bandwhich.git
-    #source-tag: 0.20.0
-    override-pull: |
-      craftctl default
-      craftctl set version=$(git describe --tags --abbrev=0).$(git rev-parse --short HEAD)
+    source-tag: $SANAPCRAFT_PROJECT_VERSION
+
 apps:
   bandwhich:
     command: bin/bandwhich
