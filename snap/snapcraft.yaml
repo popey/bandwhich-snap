@@ -12,7 +12,7 @@ parts:
   bandwhich:
     plugin: rust
     source: https://github.com/imsnif/bandwhich.git
-    source-tag: $SANAPCRAFT_PROJECT_VERSION
+    source-tag: $SNAPCRAFT_PROJECT_VERSION
 
 apps:
   bandwhich:
